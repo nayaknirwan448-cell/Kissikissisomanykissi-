@@ -5,7 +5,7 @@ const yesBtn = document.getElementById("yesBtn");
 const result = document.getElementById("result");
 const gif = document.getElementById("celebrateGif");
 
-// NO button runs away + shows messages
+// NO button runs away + text + GIF
 noBtn.addEventListener("mouseover", () => {
   noCount++;
 
@@ -14,8 +14,9 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 
-  noText.style.display = "block";
-
+  // show text
+  const noGif = document.getElementById("noGif");
+  
   if (noCount === 1) {
     noText.innerText = "Are you sure? 🥺";
   } else if (noCount === 2) {
@@ -25,9 +26,16 @@ noBtn.addEventListener("mouseover", () => {
   } else {
     noText.innerText = "You know you want to say YES 😏💘";
   }
+
+  // show NO gif
+  noGif.style.display = "block";
+
+  // hide gif after 1 second
+  setTimeout(() => {
+    noGif.style.display = "none";
+  }, 1000);
 });
 
-// YES button clicked
 yesBtn.addEventListener("click", () => {
   result.style.display = "block";
   gif.style.display = "block";
