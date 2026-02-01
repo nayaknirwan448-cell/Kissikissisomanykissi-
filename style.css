@@ -27,11 +27,6 @@ button {
   cursor: pointer;
 }
 
-#yesBtn {
-  background: #ff4d88;
-  color: white;
-}
-
 #noBtn {
   background: #ccc;
   position: absolute;
